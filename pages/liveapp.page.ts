@@ -15,19 +15,14 @@ export default class LiveAppPage {
 
   getWarningIcon = () =>  this.page.locator('td .fa.fa-warning');
 
-//   await newPage.locator('#email').fill('admin@test.com');
-//   await newPage.locator('#password').fill('test');
-//   await newPage.locator('input[value="Sign In"]').click();
-
   // Methods
-
   async loginToLiveApp (username: string, password: string) {
     await this.getUserEmailInput().fill(username);
     await this.getUserPwdInput().fill(password);
     await this.getSignInBtn().click();
   }
 
-//   async getWarningIconStyleAtr() {
-//     await this.getWarningIcon().first().getAttribute('style');
-//   }
+  async getWarningIconStyleAtr() {
+   return await this.getWarningIcon().first().getAttribute('style');
+  }
 }

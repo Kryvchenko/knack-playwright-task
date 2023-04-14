@@ -27,26 +27,23 @@ test.describe('Builder and the Live App testing', () => {
           element.click();
          }
       };
-      const color = randomColor();
-      builderPage.changeColor(color);
+      const currentColor = await randomColor();
+      await builderPage.changeColor(currentColor);
       const icon = await builderPage.getIcon();
-      expect(icon).toBeVisible({timeout: 10000});
-      return color;
+      expect(icon).toBeVisible();
+      return currentColor;
     });
 
     await test.step('Verify that icon color has been changed on the Live App page', async () => {
-      // const liveAppPage = new LiveAppPage(page);
       const [newPage] = await Promise.all([
         context.waitForEvent('page'), 
         builderPage.getLiveAppLink().click()
       ])
-      // liveAppPage.loginToLiveApp('admin@test.com', 'test');
-      await newPage.locator('#email').fill('admin@test.com');
-      await newPage.locator('#password').fill('test');
-      await newPage.locator('input[value="Sign In"]').click();
-      const style = await newPage.locator('td .fa.fa-warning').first().getAttribute('style');
+      const liveAppPage = new LiveAppPage(newPage);
+      liveAppPage.loginToLiveApp(LOGIN_DETAILS.liveAppUsername, LOGIN_DETAILS.liveAppPwd);
+      const style = await liveAppPage.getWarningIconStyleAtr();
       expect(style).toContain(color);
     });
   
-   })
-})
+   });
+});
