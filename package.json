@@ -4,12 +4,23 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npx playwright test"
+    "test": "npx playwright test",
+    "lint": "eslint .",
+    "format": "prettier --write ."
+
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint && npm run format"
+    }
+  },  
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@playwright/test": "^1.32.3"
+    "@playwright/test": "^1.32.3",
+    "eslint": "^8.38.0",
+    "husky": "^8.0.3",
+    "prettier": "^2.8.7"
   }
 }
