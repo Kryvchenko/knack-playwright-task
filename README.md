@@ -1,6 +1,6 @@
 # Test Automation Framework with Playwright
 
-## Test statuse badge: [![Knack task playwright](https://github.com/Kryvchenko/knack-playwright-task/actions/workflows/playwtight.yml/badge.svg)](https://github.com/Kryvchenko/pecode-task-cypress/actions/workflows/cypress.yml)
+## Test statuse badge: [![Knack task playwright](https://github.com/Kryvchenko/knack-playwright-task/actions/workflows/playwright.yml/badge.svg)](https://github.com/Kryvchenko/pecode-task-cypress/actions/workflows/cypress.yml)
 
 <a href="https://knack.com" target="_blank" rel="noreferrer"> <img src="https://intellyx.com/wp-content/uploads/2022/09/Knack-intellyx-BC-logo-1200x628-1-768x480.png" alt="pecode" width="256" height="160"/></a>
 
