@@ -1,7 +1,7 @@
 import { Page } from '@playwright/test';
 
 export default class LoginPage {
-  page : Page;
+  page : Page
   constructor(page: Page) {
     this.page = page;
   }

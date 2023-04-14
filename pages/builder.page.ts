@@ -1,7 +1,7 @@
 import { Page } from '@playwright/test';
 
 export default class BuilderPage {
-  page : Page;
+  page : Page
   constructor(page: Page) {
     this.page = page;
   }
@@ -27,7 +27,7 @@ export default class BuilderPage {
 
   getIcon = () => this.page.locator('.selected-icon');
 
-  getLiveAppLink = () => this.page.locator('.accessMenu_directLink');
+  // getLiveAppLink = () => this.page.locator('.accessMenu_directLink');
 
   // Methods
   async navigateToWarehouseInventoryView() {

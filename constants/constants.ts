@@ -16,5 +16,5 @@ export const TITLES = Object.freeze({
 
 export const TEXT_CONTENT = Object.freeze({
   tableTitle: 'On-Hand',
-
+  filterText: 'Needs Re-Order'
 });
