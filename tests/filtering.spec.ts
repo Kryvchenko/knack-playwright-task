@@ -8,7 +8,6 @@ import { LOGIN_DETAILS, TEXT_CONTENT, TITLES, URLS } from '../constants/constant
 test.describe('Inventory page testing', () => {
   test.beforeEach( async ({ page }) => {
     const loginPage = new LoginPage(page);
-
     await loginPage.login(URLS.builder, LOGIN_DETAILS.email, LOGIN_DETAILS.password)
     const navTitle = await loginPage.getNavTitle();
     expect(navTitle).toBe(TITLES.warehouseManager);
@@ -17,7 +16,6 @@ test.describe('Inventory page testing', () => {
   test('Filtering Inventory', async ({page, context}) => { 
     const recordsPage = new RecordsPage(page);
     const navPage = new NavPage(page);
-
     const recordsCount = await test.step('Verify the filter records on the Inventory object', async () => {
       await recordsPage.navigateToRecordsPageInventory();
       await recordsPage.filterRecords(TEXT_CONTENT.filterText);
@@ -30,7 +28,6 @@ test.describe('Inventory page testing', () => {
             navPage.getLiveAppLink().click()
           ])
         const liveAppPage = new LiveAppPage(newPage);
-        
         liveAppPage.loginToLiveApp(LOGIN_DETAILS.liveAppUsername, LOGIN_DETAILS.liveAppPwd);
         await liveAppPage.navigateToInventory();
         await recordsPage.filterRecords(TEXT_CONTENT.filterText);

@@ -22,7 +22,6 @@ test.describe('Builder and the Live App testing', () => {
       const viewTitle = await builderPage.getViewTitle().innerText();
       expect(viewTitle).toBe(TITLES.warehouseInventory);
     });
-
     const color = await test.step('Verify change Display Rule Icon color to this random color', async () => {
        for (const element of await builderPage.getCoulumnTitle().all()) {
          if(await element.textContent() === TEXT_CONTENT.tableTitle) {
@@ -35,7 +34,6 @@ test.describe('Builder and the Live App testing', () => {
       expect(icon).toBeVisible();
       return currentColor;
     });
-
     await test.step('Verify that icon color has been changed on the Live App page', async () => {
       const [newPage] = await Promise.all([
         context.waitForEvent('page'), 

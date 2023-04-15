@@ -6,7 +6,8 @@
   "scripts": {
     "test": "npx playwright test --reporter=html",
     "lint": "eslint .",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "report": "npx playwright show-report"
   },
   "husky": {
     "hooks": {

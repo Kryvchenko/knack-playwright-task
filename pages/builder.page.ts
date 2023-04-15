@@ -23,7 +23,7 @@ export default class BuilderPage {
 
   getColorInput = () =>  this.page.locator('.kn-input.kn-colorInput_input');
 
-  getSaveBtn = () =>  this.page.locator('[data-cy="toolbox-save"]');
+  getSaveBtn = () =>  this.page.locator('.save');
 
   getIcon = () => this.page.locator('.selected-icon');
 
