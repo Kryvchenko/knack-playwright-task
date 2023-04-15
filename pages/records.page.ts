@@ -22,7 +22,6 @@ export default class RecordsPage {
   getRecordsCheckBox = () =>  this.page.locator('th input[type="checkbox"]');
   
  // Methods
-
   async navigateToRecordsPageInventory() {
     await this.getRegordsPage().click();
     await this.getWarehouseInvetory().click();

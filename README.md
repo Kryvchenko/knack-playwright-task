@@ -20,7 +20,8 @@
 1. Clone this repository
 2. Navigate to the folder of cloned repository and run terminal
 3. Install dependencies with `npm install`
-4. To run test in headless mode `npm test`
+4. Add `email` and `password` credentials to `constants.ts` file
+5. To run test in headless mode `npm test`
 
 ## To run test dockerized:
 

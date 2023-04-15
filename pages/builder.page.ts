@@ -27,8 +27,6 @@ export default class BuilderPage {
 
   getIcon = () => this.page.locator('.selected-icon');
 
-  // getLiveAppLink = () => this.page.locator('.accessMenu_directLink');
-
   // Methods
   async navigateToWarehouseInventoryView() {
      await this.getNavPages().click();
