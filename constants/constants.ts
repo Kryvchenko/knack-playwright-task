@@ -1,6 +1,6 @@
 export const LOGIN_DETAILS = Object.freeze({
-  email: 'example@gmail.com',
-  password: 'example686124HH',
+  email: 'amzkryvchenko@gmail.com',
+  password: 'P@$Fs7whDS#f55V',
   liveAppUsername: 'admin@test.com',
   liveAppPwd: 'test',
 });

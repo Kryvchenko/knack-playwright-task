@@ -6,13 +6,14 @@ import LiveAppPage from '../pages/liveapp.page';
 import { LOGIN_DETAILS, TEXT_CONTENT, TITLES, URLS } from '../constants/constants';
 
 test.describe('Inventory page testing', () => {
+  // login 
   test.beforeEach( async ({ page }) => {
     const loginPage = new LoginPage(page);
     await loginPage.login(URLS.builder, LOGIN_DETAILS.email, LOGIN_DETAILS.password)
     const navTitle = await loginPage.getNavTitle();
     expect(navTitle).toBe(TITLES.warehouseManager);
   });
-
+  // filtering 
   test('Filtering Inventory', async ({page, context}) => { 
     const recordsPage = new RecordsPage(page);
     const navPage = new NavPage(page);
@@ -22,6 +23,7 @@ test.describe('Inventory page testing', () => {
       const numberOfRecords = await recordsPage.getRecordsCount();
       return numberOfRecords;
     });
+    // verification
     await test.step('Verify filtered records on the live app inventory tab', async () => {
         const [newPage] = await Promise.all([
             context.waitForEvent('page'), 

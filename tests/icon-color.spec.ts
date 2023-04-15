@@ -7,13 +7,14 @@ import LiveAppPage from '../pages/liveapp.page';
 import NavPage from '../pages/nav.page';
 
 test.describe('Builder and the Live App testing', () => {
+  // login
   test.beforeEach( async ({ page }) => {
     const loginPage = new LoginPage(page);
     await loginPage.login(URLS.builder, LOGIN_DETAILS.email, LOGIN_DETAILS.password)
     const navTitle = await loginPage.getNavTitle();
     expect(navTitle).toBe(TITLES.warehouseManager);
   });
-
+  // changing color
   test('Icon Color for Display Rules', async ({page, context}) => { 
     const navPage = new NavPage(page);
     const builderPage = new BuilderPage(page);
@@ -34,6 +35,7 @@ test.describe('Builder and the Live App testing', () => {
       expect(icon).toBeVisible();
       return currentColor;
     });
+     // verification
     await test.step('Verify that icon color has been changed on the Live App page', async () => {
       const [newPage] = await Promise.all([
         context.waitForEvent('page'), 
